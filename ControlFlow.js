@@ -1,110 +1,120 @@
 
+/*
+ * Control Flows includes:
+ * if, if-else, else-if, switch, for, for-in, for-of, while, do-while loops, break, continue, return, try-catch, try-catch-finally and throw.
+ */
 
 
-// if condition
-if (condition) {
-    // code to execute if the condition is true
-}
+let temperature = 27;
 
-// if else
-if (condition) {
-    // code to execute if the condition is true
-} else {
-    // code to execute if the condition is false
-}
+// if statement
+if (temperature > 30)
+    console.log('it is hot today')
 
-// else if
-if (condition1) {
-    // code if condition1 is true
-} else if (condition2) {
-    // code if condition2 is true
-} else {
-    // code if both are false
-}
+// if-else statement
+if (temperature > 30)
+    console.log('it is hot today')
+else
+    console.log('it is cold today')
 
+// else-if
+if (temperature > 30)
+    console.log('it is hot today')
+else if(temperature > 20)
+    console.log('it is normal today')
+else
+    console.log('it is cold today')
 
-// switch
-switch (expression) {
-    case value1:
-        // code if expression === value1
-        break;
-    case value2:
-        // code if expression === value2
-        break;
+// switch statement
+switch(temperature) {
+    case 10:
+        console.log('temperature is 10');
+        break
+    case 20:
+        console.log('temperature us 20')
+        break
     default:
-    // code if none of the cases match
+        console.log('invalid temperature value')
 }
 
 
 // for loop
-for (initialization; condition; increment) {
-    // code to be executed
+for (let i = 0; i < 6; i++) {
+    console.log(`The value of i is : ${i}`)
 }
 
-
-// while loop
-while (condition) {
-    // code to be executed
+let employee = {
+    name: 'name',
+    age: 21
 }
-
-// do while loop
-do {
-    // code to be executed
-} while (condition);
-
 
 // for in loop
-for (key in object) {
-    // code to execute for each property
+for (const employeeKey in employee) {
+    console.log(employeeKey)
 }
 
+let arr = ['car', 'bike']
 
 // for of loop
-for (element of iterable) {
-    // code to execute for each element
+for (const elements of arr) {
+    console.log(elements)
 }
 
+let count = 0
 
-// break
-for (let i = 0; i < 10; i++) {
-    if (i === 5) {
-        break; // breaks the loop when i is 5
-    }
+// while loop
+while (count < 5) {
+    console.log(`value of count is ${count++}`)
 }
 
+count = 0
+// do while loop
+do {
+    console.log(`value of count in do while loop ${count++}`)
+} while (count < 5)
 
-// continue
-for (let i = 0; i < 10; i++) {
-    if (i === 5) {
-        continue; // skips the iteration when i is 5
-    }
+// Jump statements: break and continue
+for (let i = 0; i < 5; i++) {
+    if (i == 3)
+        break
+    console.log(`The value of i ${i} break at 3`)
+}
+
+for (let i = 0; i < 5; i++) {
+    if (i == 3)
+        continue
+    console.log(`The value of i ${i} continue at 3`)
 }
 
 // return
-function sum(a, b) {
-    return a + b; // exits the function and returns the sum
+function printNumbers() {
+    let number = 0
+    while (number <= 10) {
+        console.log(`The value of number is ${number}`)
+        number++
+
+        if (number == 4)
+            return
+    }
 }
 
-
-// try catch
+// try-catch
 try {
-    // code that may throw an error
-} catch (error) {
-    // code to handle the error
+    console.log('try to run code block')
+} catch (e) {
+    console.log(`error is ${e.message}`)
 }
 
-
-// finally
+// try-catch finally (try with resource)
 try {
-    // code that may throw an error
-} catch (error) {
-    // code to handle the error
+    console.log('trying code here')
+} catch (e) {
+    console.log(`catching error ${e.message}`)
 } finally {
-    // code to execute no matter what
+    console.log('I will always printed')
 }
-
 
 // throw
-if (somethingWrong) {
-    throw new Error('Something went wrong!');
+if (typeof count != "number") {
+    throw new Error('NaN')
 }
